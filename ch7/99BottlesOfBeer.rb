@@ -12,7 +12,12 @@ for i in 0..99
 		puts(nb.to_s + " bottles of beer on the wall, " + nb.to_s + " bottles of beer.")
 		
 		nb = nb-1
-		puts("Take one down and pass it around, " + nb.to_s + " bottles of beer on the wall")
+		
+		if nb == 1
+			puts("Take one down and pass it around, " + nb.to_s + " bottle of beer on the wall.")
+		else
+			puts("Take one down and pass it around, " + nb.to_s + " bottles of beer on the wall.")
+		end
 	end
 	
 end
