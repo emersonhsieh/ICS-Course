@@ -15,12 +15,14 @@ while ended == false
 				puts("HUH?! I DIDN\'T HEAR YOU!")
 			end
 		else
+			byecount = 0
 			n = rand(21)
 			yr = 1930 + n
 			
 			puts("NO, NOT SINCE " + yr.to_s + "!")
 		end
 	else
+		byecount = 0
 		puts("HUH?! SPEAK UP, SONNY!")
 	end
 end

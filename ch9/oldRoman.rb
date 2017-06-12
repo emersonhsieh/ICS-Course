@@ -14,7 +14,7 @@ def romanize(n)
 		for i in 1..(n/num).floor
 			str = str + s
 		end
-		n = n-num*(n/num).floor
+		n = n%num
 	end
 	
 	return str
