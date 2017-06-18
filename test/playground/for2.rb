@@ -1,8 +1,8 @@
 str = "this"
 
 
-for i in 1..3
-	str = str + " this"
+for i in 1..1
+	puts("#{i}")
 
 end
 

@@ -19,13 +19,6 @@ def shuffle ary
 		ary[i] = ary[n]
 		ary[n] = temp
 	end
-
-	for j in 0..i
-		n = rand(i)
-		temp = ary[i]
-		ary[i] = ary[n]
-		ary[n] = temp
-	end
 	
 	return ary
 end
