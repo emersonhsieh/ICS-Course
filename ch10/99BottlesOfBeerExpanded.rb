@@ -85,13 +85,13 @@ for i in 0..9999
 	nb = 9999-i
 	
 	if nb == 1
-		puts(english_number(nb) + " bottle of beer on the wall, " + english_number(nb) + " bottle of beer.")
+		puts(english_number(nb).capitalize + " bottle of beer on the wall, " + english_number(nb) + " bottle of beer.")
 		puts("Take one down and pass it around, no more bottles of beer on the wall.")
 	elsif nb == 0
 		puts("No more bottles of beer on the wall, no more bottles of beer. ")
 		puts("Go to the store and buy some more, 9999 bottles of beer on the wall.")
 	else
-		puts(english_number(nb) + " bottles of beer on the wall, " + english_number(nb) + " bottles of beer.")
+		puts(english_number(nb).capitalize + " bottles of beer on the wall, " + english_number(nb) + " bottles of beer.")
 		
 		nb = nb-1
 		
@@ -102,4 +102,6 @@ for i in 0..9999
 		end
 	end
 	
+  puts("")
+  
 end

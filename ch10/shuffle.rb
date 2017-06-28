@@ -1,4 +1,19 @@
-a = [1,2,3,4,5,6,7,8,9]
+l = 0
+
+while l <= 0
+  printf("Enter the length of the array \(must be larger than 0\):  ")
+  l = gets.chomp.to_i
+  a = []
+end
+
+(0...l).each do |x|
+  print("Item No. #{x}:  ")
+  a[x] = gets.chomp
+end
+
+puts("")
+puts("Shuffled Array:")
+puts("")
 
 def shuffle ary
 	i = ary.length
