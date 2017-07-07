@@ -1,15 +1,26 @@
 require('yaml')
 
 def save filename, ary
-	if File.exist?(filename)
-		puts("File Already Exists; File Not Overwritten")
-		return nil
+	if File.exist?(filename)   
+		puts("File Already Exists; do you want to overwrite the file (Y/N)?")
+    r = 'a'
+    while r.downcase != 'n' && r.downcase != 'y'
+      r = gets.chomp
+    end
+    if r.downcase == 'y'
+      File.open filename, 'w' do |f|
+        f.write(ary.to_yaml)
+      end
+      puts("File Overwritten")
+    else
+      puts("File not overitten")
+    end
+    
 	else
-		File.open filename, 'w' do |f|
+    File.open filename, 'w' do |f|
 			f.write(ary.to_yaml)
 		end
 		puts("File Written")
-		return nil
 	end
 end
 
@@ -20,7 +31,7 @@ def read filename
 	return ary
 end
 
-ar = ["htc", "asdf", "surface", "formaldehyde", "oganesson", "berkeley", "methane", "tachyon"]
+ar = ["htc", "etaoinshrdlu", "surface", "formaldehyde", "oganesson", "berkeley", "methane", "tachyon"]
 
 save("random.txt", ar)
 bob = read "random.txt"

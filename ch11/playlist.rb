@@ -5,7 +5,6 @@ def save filename, ary
 		f.write(ary.join("\n"))
 	end
 	puts("File Written")
-	return nil
 end
 
 def shuffle ary
