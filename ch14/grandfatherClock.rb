@@ -1,17 +1,20 @@
-#Grandfather clock
+def grandfatherClock &block
+  h = Time.new.hour
+  if h % 12 == 0
+    h = 12
+  else
+    h = h % 12
+  end
 
-h = Time.new.hour
-if h % 12 == 0
-	h = 12
-else
-	h = h % 12
+  (1..h).each do |x|
+    block.call
+  end
 end
 
-#puts("#{h}")
-
-for j in 1..10 
-	puts("DONG!")
+grandfatherClock do
+  puts("DONGDONG")
 end
 
-#ary = 1..10
-#puts("#{ary}")
+grandfatherClock do
+  puts("HELLO")
+end

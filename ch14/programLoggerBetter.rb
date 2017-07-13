@@ -5,10 +5,10 @@ def loggerpro description, &block
 	print("	"*($nestdepth-1))
 	
 	puts("Beginning \"#{description}\" ...")
-	block.call
+	result = block.call
 	
 	print("	"*($nestdepth-1))
-	puts("...\"#{description}\" finished, returning:")
+	puts("...\"#{description}\" finished, returning: #{result}")
 	$nestdepth = $nestdepth - 1
 end
 
@@ -21,4 +21,13 @@ loggerpro "bob" do
 	end
 end
 
-puts("#{"hello"*5}")
+# block with returns
+loggerpro "block1" do
+	loggerpro "block2" do
+		loggerpro "block3" do
+      5
+		end
+    'hello'
+	end
+  'this'
+end

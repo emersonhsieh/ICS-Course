@@ -37,19 +37,35 @@ class OrangeTree
 				return "The tree is now #{@age} years old, #{@h} m tall, and has #{@fruits} fruits."
 			else
 				@dead = true
-				return "The tree is now dead"
+				return "The tree is now dead."
 			end
 		else
-			return "The tree is now dead"
+			return "The tree is now dead."
 		end
 	end
+  
+  def age
+    if !@dead
+      return "The tree is now #{@age} years old."
+    else
+      one_year_passes
+    end
+  end
 	
 	def height
-		return "The tree is now #{@h} m tall."
+    if !@dead
+      return "The tree is now #{@h} m tall."
+    else
+      one_year_passes
+    end
 	end
 	
 	def count_the_oranges
-		return "The tree has #{@fruits} fruits."
+    if !@dead
+      return "The tree has #{@fruits} fruits."
+    else
+      one_year_passes
+    end
 	end
 	
 	def pick_an_orange
@@ -92,3 +108,9 @@ puts(bob.one_year_passes)
 puts(bob.one_year_passes)
 puts(bob.one_year_passes)
 puts(bob.one_year_passes)
+
+puts("After the tree dies, I attempt to find the age of the tree.")
+
+puts(bob.age)
+puts(bob.height)
+puts(bob.count_the_oranges)
