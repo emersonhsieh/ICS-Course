@@ -12,10 +12,20 @@ class Die
   end 
   
   def cheat n
-    @number_showing = n
+    if n>=1 && n<=6
+      @number_showing = n
+    else
+      puts "Cheating failed; value must be between one and six"
+    end
   end
 end
 
 puts Die.new.showing
-cheat_die =  Die.new.cheat(3)
-puts(cheat_die)
+
+cheat_die =  Die.new
+cheat_die.cheat(3)
+puts(cheat_die.showing)
+
+failed_cheat_die =  Die.new
+failed_cheat_die.cheat(7)
+puts(failed_cheat_die.showing)
